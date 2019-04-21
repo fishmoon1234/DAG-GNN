@@ -11,7 +11,7 @@ PyTorch >1.0
 ```
 
 
-## Running the tests
+## Running 
 
 Explain how to run the automated tests for this system
 
