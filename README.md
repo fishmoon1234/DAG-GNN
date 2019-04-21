@@ -24,14 +24,6 @@ python train.py --graph_linear_type=<CHOICE>
 ```
 
 
-## Authors
-
-* **Yue Yu** - *Initial work* - [1](https://github.com/fishmoon1234)
-* **Tian Gao** - *Initial work* - [2](https://github.com/skypea)
-
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
 ## Cite
 
 If you make use of this code in your own work, please cite our paper:
