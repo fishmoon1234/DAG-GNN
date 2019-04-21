@@ -1,6 +1,6 @@
 
 ''''
-Main function for traininng GCN DAG
+Main function for traininng DAG-GNN
 
 '''
 
@@ -44,7 +44,7 @@ parser.add_argument('--graph_degree', type=int, default=3,
                     help='the number of degree in generated DAG graph')
 parser.add_argument('--graph_sem_type', type=str, default='linear-gauss',
                     help='the structure equation model (SEM) parameter type')
-parser.add_argument('--graph_linear_type', type=str, default='nonlinear_1',
+parser.add_argument('--graph_linear_type', type=str, default='nonlinear_2',
                     help='the synthetic data type: linear -> linear SEM, nonlinear_1 -> x=Acos(x+1)+z, nonlinear_2 -> x=2sin(A(x+0.5))+A(x+0.5)+z')
 parser.add_argument('--edge-types', type=int, default=2,
                     help='The number of edge types to infer.')
