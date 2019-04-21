@@ -11,22 +11,18 @@ PyTorch >1.0
 ```
 
 
-## Running 
+## How to Run 
 
-Explain how to run the automated tests for this system
+Synthetic data experiments 
 
-### Break down into end to end tests
+### Synthetic Experiments
 
-Explain what these tests test and why
-
-```
-Give an example
-```
-
+CHOICE = linear, nonlinear_1 or nonlinear_2 
 
 ```
-Give an example
+python train.py --graph_linear_type=<CHOICE>
 ```
+
 
 ## Authors
 
@@ -36,14 +32,25 @@ Give an example
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
-## License
+## Cite
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+If you make use of this code in your own work, please cite our paper:
+
+```
+@article{,
+  title={},
+  author={},
+  journal={},
+  year={2019}
+}
+```
+
 
 ## Acknowledgments
+Our work and code benefit from  two existing works
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* DAG NOTEAR https://github.com/xunzheng/notears
+* Neural relational inference for interacting systems https://github.com/ethanfetaya/nri
+
 
 
