@@ -29,17 +29,17 @@ python train.py --graph_linear_type=<CHOICE>
 If you make use of this code in your own work, please cite our paper:
 
 ```
-@article{,
-  title={},
-  author={},
-  journal={},
+@inproceedings{yu2019dag,
+  title={DAG-GNN: DAG Structure Learning with Graph Neural Networks},
+  author={Yue Yu, Jie Chen, Tian Gao, and Mo Yu},
+  booktitle={Proceedings of the 36th International Conference on Machine Learnin},
   year={2019}
 }
 ```
 
 
 ## Acknowledgments
-Our work and code benefit from  two existing works
+Our work and code benefit from two existing works, which we are very grateful.
 
 * DAG NOTEAR https://github.com/xunzheng/notears
 * Neural relational inference for interacting systems https://github.com/ethanfetaya/nri
