@@ -18,7 +18,7 @@ Synthetic data experiments
 
 ### Synthetic Experiments
 
-CHOICE = linear, nonlinear_1 or nonlinear_2, corresponding to the experiments in the paper
+CHOICE = linear, nonlinear_1, or nonlinear_2, corresponding to the experiments in the paper
 
 ```
 python train.py --graph_linear_type=<CHOICE>
