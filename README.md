@@ -7,6 +7,7 @@ Code for DAG-GNN work
 ### Prerequisites
 
 ```
+Python 3.7
 PyTorch >1.0
 ```
 
