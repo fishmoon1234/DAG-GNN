@@ -36,11 +36,11 @@ parser.add_argument('--data_dir', type=str, default= 'data/',
                     help='data file name containing the discrete files.')
 parser.add_argument('--data_sample_size', type=int, default=5000,
                     help='the number of samples of data')
-parser.add_argument('--data_variable_size', type=int, default=100,
+parser.add_argument('--data_variable_size', type=int, default=10,
                     help='the number of variables in synthetic generated data')
 parser.add_argument('--graph_type', type=str, default='erdos-renyi',
                     help='the type of DAG graph by generation method')
-parser.add_argument('--graph_degree', type=int, default=3,
+parser.add_argument('--graph_degree', type=int, default=2,
                     help='the number of degree in generated DAG graph')
 parser.add_argument('--graph_sem_type', type=str, default='linear-gauss',
                     help='the structure equation model (SEM) parameter type')
@@ -73,7 +73,7 @@ parser.add_argument('--use_A_positiver_loss', type = int, default = 0,
 parser.add_argument('--no-cuda', action='store_true', default=True,
                     help='Disables CUDA training.')
 parser.add_argument('--seed', type=int, default=42, help='Random seed.')
-parser.add_argument('--epochs', type=int, default= 200,
+parser.add_argument('--epochs', type=int, default= 300,
                     help='Number of epochs to train.')
 parser.add_argument('--batch-size', type=int, default = 100, # note: should be divisible by sample size, otherwise throw an error
                     help='Number of samples per batch.')
@@ -495,6 +495,22 @@ try:
     fdr, tpr, fpr, shd, nnz = count_accuracy(ground_truth_G, nx.DiGraph(best_MSE_graph))
     print('Best MSE Graph Accuracy: fdr', fdr, ' tpr ', tpr, ' fpr ', fpr, 'shd', shd, 'nnz', nnz)
 
+    graph = origin_A.data.clone().numpy()
+    graph[np.abs(graph) < 0.1] = 0
+    # print(graph)
+    fdr, tpr, fpr, shd, nnz = count_accuracy(ground_truth_G, nx.DiGraph(graph))
+    print('threshold 0.1, Accuracy: fdr', fdr, ' tpr ', tpr, ' fpr ', fpr, 'shd', shd, 'nnz', nnz)
+
+    graph[np.abs(graph) < 0.2] = 0
+    # print(graph)
+    fdr, tpr, fpr, shd, nnz = count_accuracy(ground_truth_G, nx.DiGraph(graph))
+    print('threshold 0.2, Accuracy: fdr', fdr, ' tpr ', tpr, ' fpr ', fpr, 'shd', shd, 'nnz', nnz)
+
+    graph[np.abs(graph) < 0.3] = 0
+    # print(graph)
+    fdr, tpr, fpr, shd, nnz = count_accuracy(ground_truth_G, nx.DiGraph(graph))
+    print('threshold 0.3, Accuracy: fdr', fdr, ' tpr ', tpr, ' fpr ', fpr, 'shd', shd, 'nnz', nnz)
+
 
 except KeyboardInterrupt:
     # print the best anway
@@ -512,6 +528,22 @@ except KeyboardInterrupt:
     print(nx.to_numpy_array(ground_truth_G))
     fdr, tpr, fpr, shd, nnz = count_accuracy(ground_truth_G, nx.DiGraph(best_MSE_graph))
     print('Best MSE Graph Accuracy: fdr', fdr, ' tpr ', tpr, ' fpr ', fpr, 'shd', shd, 'nnz', nnz)
+
+    graph = origin_A.data.clone().numpy()
+    graph[np.abs(graph) < 0.1] = 0
+    # print(graph)
+    fdr, tpr, fpr, shd, nnz = count_accuracy(ground_truth_G, nx.DiGraph(graph))
+    print('threshold 0.1, Accuracy: fdr', fdr, ' tpr ', tpr, ' fpr ', fpr, 'shd', shd, 'nnz', nnz)
+
+    graph[np.abs(graph) < 0.2] = 0
+    # print(graph)
+    fdr, tpr, fpr, shd, nnz = count_accuracy(ground_truth_G, nx.DiGraph(graph))
+    print('threshold 0.2, Accuracy: fdr', fdr, ' tpr ', tpr, ' fpr ', fpr, 'shd', shd, 'nnz', nnz)
+
+    graph[np.abs(graph) < 0.3] = 0
+    # print(graph)
+    fdr, tpr, fpr, shd, nnz = count_accuracy(ground_truth_G, nx.DiGraph(graph))
+    print('threshold 0.3, Accuracy: fdr', fdr, ' tpr ', tpr, ' fpr ', fpr, 'shd', shd, 'nnz', nnz)
 
 
 f = open('trueG', 'w')
